@@ -1,0 +1,430 @@
+JavaScript Full Course For Beginners With JavaScript Projects Tutorial And Notes 2024
+
+
+https://www.youtube.com/watch?v=Pyv0tMm5i_w
+
+
+
+
+-=-=-=-= 1. Function -=-==-=
+
+Function
+
+>> block code yg melakukan beberap tugas, dan bisa di gunakan berkali kali saat di panggil
+
+function functionName() {
+	//code to execution
+}
+
+functionanme()
+
+
+
+-==-= parameter dan arguments
+
+parameter : variabel yg di deklarasikan di function
+
+arguments : varibel saat kita memanggil function
+
+
+semisal di parameter ada 2 :
+
+jika :
+
+- di argument kita kelebihan 1 , maka yg lebihnya ga dianggap
+
+- di argument kita kekurangan 1, maka parameter 1 nya akan jadi udnefined
+
+
+
+-==- default parameter
+
+>> semisal pada parameter kita kasih default parameter, dan saat di arguments tidak ada dipanggil, maka default parameter akan digunakan
+
+
+-=-= function return
+
+return statement akan mengembalikan value saat function di apnggil
+
+jika ada code setelah return, akan di skip
+
+
+
+
+-=-=-= Callback -==-=
+
+>> function yg dijadikan arguments di function lain
+
+>> berjalan setelah function lain selsai
+
+saat menggunakan function sebagai argumen, jangan pake paranthesis ()
+
+
+
+-==- Anonymous Function -=-=
+
+di declare tanpa nama function
+
+function (parameter) {
+	// code to execution
+}
+
+>> dia tidak akan di simpan dalam memori kalau kaya diatas
+
+
+jadi i=untuk di akses, maka kita simpan dulu ke dalam variabel
+
+nah kalau di kasih variabel bia rdisimpan memori, jadinya function expression
+
+jadi saat mau dipanggil, tinggal panggil aja tuh variabelnya dikasih paranthesis ()
+
+jika ingin panggil function anonymous tanpa di kaasih variabel tinggal dikasih () diakhir
+
+
+setTimeout >> termasuk callback, karena didalamnya kita bisa masukin sebuah callback
+
+
+setTimeout(fn,ms)
+
+dia akan menunggu selama ms detik, baru dijalankan
+
+
+
+-==- rekursif function
+
+>> fungsi yg memanggil ddirinya sendiri
+
+haus punya kondisi untuk mematikan rekursif , biar tidak infinite looping
+
+countdown >> termasuk rekursif
+
+
+
+
+-==-= 3. Object -=-=-
+
+>> tipe data non-primitif
+
+untuk menyimpan beberapa koleksi data
+
+const object_name = {
+
+	key1:value1,
+	key2:value2
+}
+
+
+di dalam object, bisa ada properti dan method
+
+key dan value >> disebut properti
+
+
+
+-=-= cara memanggil object properti
+
+>> ya tingggal panggil aja
+
+ex :
+
+namaObject.Key
+
+atau 
+
+namaObject["key"]
+
+
+-=- -cara update properti dalam object
+
+ya tinggal ambil aja properti key yg ada disana, 
+
+object.Name = "value yg kita mau"
+
+
+-==- cara delete properti
+
+delete objectName.key
+
+
+-==- =cek apakah property ada di object
+
+namaProperti in namaObjek
+
+hasilnya true/false nanti
+
+
+--= for.. in loop
+
+>> membolehkan itu untuk akses tiap properti dan value di objek tanpa tahu spesifik ama dari properti
+
+--=-= cara lain buat object
+
+const namaObject = new Object()
+
+namaObject.namaKey = "value"
+
+console.log(namaObject)
+
+
+
+
+-=-=- 4.  Object Method -==
+
+
+>> object properti yg mengandung function 
+
+intinya jika ada fungsi didalam object, disebut "Method"
+
+
+
+-=-= this keyword -=-=
+
+>> untuk mengakses properti lain dari seu=buah objek yg ddidalamnya ada method, nah di methodnya bisaa pake this untuk akses properti diluar.
+
+
+jadi dalam satu objek, ada method, nah di methodn ya itu bisa panggil variabel dari luar methodnya
+
+
+
+-=- window object
+
+>> semisal kita console.log('this') 
+
+di luar, maka akan menghasilkan window object
+
+this >> bukan variabel, jadi ga bisa diubah
+
+
+
+--=-= Constructor Function -=-=
+
+>> digunakan untuk membuat object
+
+tapi ada >> new ()
+
+
+>> kalau yg sebelumnya itu kita buat objek tapi single, untuk 1 variabel aja
+
+>> constructor ini kita bisa buat template, jadi nanti variabel lain bisa assign sebuah objek kedalam ini
+
+Usahakan nama Constructor function itu capitalize
+
+>> dan saat memanggil constructor function , tambahkan kata "new"
+
+>> intinya kita bisa buat multiple objek, dengan parese atau argument yg dilempar berbeda (datanya)
+
+
+-=-= kekurangan constructor
+
+saat kitam membuat method didalamnya, saat kita panggil objek lain, nah fungsinya akan disimpan di memori, dan menghabiskan banyak memori kita.
+
+>> makanya kita gunakan OOP (Prototipe Objek)
+
+
+
+
+-==- Objek Prototype -=--=-
+
+Tiap Function dan objek dalam javascript itu memiliki propertinya sendiri yg disebut prototype
+
+>> protoype itu sendiri juka objek yg lain
+
+jadi prototype memiliki prototypenya sendir. yg membuat prototype chain
+
+=-=-= properti inherit
+
+>> jadi kita bisa masukkan protoype kita sendiri ke dalam objek, jadi pas dipanggil di data ga ada, tapi di protoype nyua ada
+
+
+
+-==- mereplace properti value
+
+>> semisal properti value diubah, kemudian all object akan mengubah property valuenya sendiri
+
+>> semua objek yg dibuat sebelumnya, objek akan mengubah nilai sebelumnya
+
+
+
+
+-=-=-= 7. Objek Destructing -==-
+
+>> allow kita untuk ekstrak propertis objek menjadi variabel
+
+nah kita bisa ajakan tinggal : namaObject.Key
+
+>> tapi di ES6 itu beda
+
+ada method sendiri untuk destructing
+
+ 
+
+caranya es6 :
+
+let { property1: variabel1, property2:varible2    } = object
+
+
+property itu key
+
+sedangkan variabel bebas, karena itu mau kita jadikan variabel single
+
+atau tanpa variabel juga bisa
+
+
+
+
+--=- object Literal >> es6
+
+properti didalmnya akan jadi object literal
+
+
+
+
+
+
+
+-=-=-= 8. Class --=-=
+
+feature es6
+
+>> temppalte untuk membuat objek
+
+>> mirip dengaan function constructor
+
+class ClassName{
+	constructor(){
+
+}
+}
+
+usahakan awal classname itu kapital
+
+
+-=-= constructor dalam kelas
+
+>> gunanya sebagai inisialisasi value
+
+
+
+
+-==-=- method pada class
+
+>> kita bisa nambahkan fungsi di dalam class yg disebut sebgai method
+
+
+
+
+-=-=-= Getter and Setter
+
+>> metod special pada javascript, yg membolehkan kita untuk kontrol bagaimana properti di access dan modifikasi
+
+menggunakan key dan set keyword
+
+
+
+-==- Getter Method
+
+>> yg dipanggil ketika properti di akses
+
+bisa digunakan untuk validasi value properti atay convert ke format yg berbeda
+
+
+kita tinggal kasih get di depan method yg sudah ada, pas kita apnggil di luar , tidak paerlu pake kurung paranthesis
+
+
+
+-==- setter method
+
+jadi pas kita mau atur atur value, kita ga usah pake kurung paranthesis 
+
+>> dipanggil ketika properti di modifikasi, itu digunakan untuk mengupdate value dari properti atau , memberikan action
+
+sebelumnya
+
+person1.changeName('bima');
+
+sekarang tinggal :
+
+person1.changeName = "bima"
+
+>> lebih simple sih
+
+
+
+-=-= javascript class Expression
+
+>> provide kita untuk membuat alternatif mendefinisikan class baru
+
+ini mirip kaya function expression, tapi ini di class keyword
+
+bisa bernama atau ga kelasnya
+
+kalau bernama : nama bisa di gunakan untuk classs kemudian
+
+kalau tidak bernama : hanya bisa dipanggil dengan variabel yg assignnya
+
+
+
+
+
+
+
+--=- 9. Class Inheritance -=-==
+
+>> membuat kelas baru berdasarkan class yg sudah ada 
+
+atau turunan
+
+class inheritance, class yg mewarisi semuanya metode dan proeprti dari kelas induknya
+
+sangat berguna , untuk reusability. untuk membuat class inheritance, kita menggunakan extends
+
+-=-= extends keyword
+
+>> saat membaut inherit pake keyword ini
+
+intinya properti dan metode diwarisi ke anaknya, jadi pas panggil di children, juga ada induknya
+
+
+
+-=-=- super method
+
+super() method, digunakan dalam child clas, untuk mengambil semua yg ada di parent
+
+
+
+-== method overriding / shadowing method
+
+ketika metod atau properti ingin di timpa, jadi dikelas ada yg baru
+
+
+
+-=-= static method
+
+>> tidak di instancec di kelas, kita tindak bisa panggil static method dodaam object, ini hanya bisa di panggil di dalam kelas
+
+
+jadi pas kita pnggil diluar kelas dia ga bisa,
+
+jika ingin menggunakan object property didalam static method, kita bisa menggunakan objectnya dengan sebuah parameter
+
+
+
+
+
+-=-= private method
+
+>> hanya bisa diakses didalam kelas, kita tidak bisa panggil private method diluar kelas
+
+default : class itu methodnya sebuah public
+
+untuk menjadikan private
+
+jadikan pake >> #
+
+jadi untuk memanggil privatte method, kita buat sebuha method didalamnya, yg memanggil dia juga
+
+this.#nama_method()
+
+
+
+
+
